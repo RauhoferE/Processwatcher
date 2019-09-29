@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="RemoteAgent.Program">
+    <Position X="17.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteAgent.App">
+    <Position X="7.25" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACIAAAAAAAAAAAAAAAAAAAAAJggAAAAAgAA=</HashCode>
+      <FileName>App.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="watcher" />
+      <Field Name="host" />
+      <Field Name="renderer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RemoteAgent.ProcesssWatcher">
+    <Position X="7.75" Y="6.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAACAAAgkAAAAAQAAAQAAAAAAAIAgAAAAAACA=</HashCode>
+      <FileName>ProcesssWatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteAgent.Host">
+    <Position X="2.5" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAAEAAAkAQAAgAIAGAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Host.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="clients" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RemoteAgent.Client">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAACAAABBAIAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RemoteAgent.Renderer" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="3" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAA=</HashCode>
+      <FileName>Renderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RemoteAgent.ApplicationParamsparser">
+    <Position X="17.25" Y="2.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgABAABAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>ApplicationParamsparser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RemoteAgent.IRenderer">
+    <Position X="13.25" Y="1.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAA=</HashCode>
+      <FileName>IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="NetworkLibrary.ByteMessageEventArgs">
+    <Position X="18.75" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>ByteMessageEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetworkLibrary.ProcessListEventArgs">
+    <Position X="0.75" Y="3.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>ProcessListEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="List" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NetworkLibrary.StringEventArgs">
+    <Position X="19.25" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>StringEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetworkLibrary.NetworkSerealizer">
+    <Position X="0.5" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>BAEAAAIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>NetworkSerealizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetworkLibrary.NetworkDeSerealizer">
+    <Position X="5.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetworkDeSerealizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetworkLibrary.ProcessContainer">
+    <Position X="9.5" Y="6.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAAAAEAEAAAAAAQQAAAAAAAAAgAAAEAAAAA=</HashCode>
+      <FileName>ProcessContainer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Modules" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NetworkLibrary.ProcessModuleContainer">
+    <Position X="15" Y="9.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProcessModuleContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetworkLibrary.ProcessListContainer">
+    <Position X="6" Y="3.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ProcessListContainer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="OldProcesses" />
+      <Property Name="NewProcesses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NetworkLibrary.MessageBuilder">
+    <Position X="13.75" Y="0.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AOAAAEQAAAAAAAAAABAQBAiAQACAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>MessageBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetworkLibrary.Ping">
+    <Position X="20.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Ping.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NetworkLibrary.ProcessListMessage">
+    <Position X="18.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>ProcessListMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="NetworkLibrary.IMessageType">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>IMessageType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

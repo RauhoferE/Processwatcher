@@ -1,0 +1,301 @@
+﻿<Window x:Class="ProcessWatcher.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProcessWatcher.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:AgentListVm/>
+    </Window.DataContext>
+    <Grid>
+        <TabControl Margin="10">
+            <TabItem Header="Overview">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView Grid.Column="0" ItemsSource="{Binding Agents}" Grid.ColumnSpan="3">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ShowProcesses" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <RadioButton GroupName="AgentsGroup" IsChecked="{Binding IsChecked}" MinWidth="80">
+
+                                            </RadioButton>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="HostName" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding HostName}" MinWidth="80">
+
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Port" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Port}" MinWidth="80">
+
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="IPadress" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding IpAdress}" MinWidth="80">
+
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Number of Processes" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding ProcessCount}" MinWidth="80">
+
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Is Agent active" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding IsActive}" MinWidth="80">
+
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Connect" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Connect" Command="{Binding Connenct}"  MinWidth="80">
+
+                                            </Button>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Disconnect" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Disconnect" Command="{Binding Disconnect}"  MinWidth="80">
+                                            </Button>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Remove" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Remove" Command="{Binding Remove}" CommandParameter="{Binding}"  MinWidth="80">
+                                            </Button>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <StackPanel Grid.Column="0" Grid.Row="1" >
+                        <TextBlock Text="IP-Adress" Margin="5"/>
+                        <TextBox Text="{Binding IpAdress, ValidatesOnExceptions=True}" Margin="5" Grid.Column="0" Grid.Row="1" MaxHeight="20">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <StackPanel>
+                                        <Border
+                                                    BorderBrush="Red"
+                                                    BorderThickness="2">
+                                            <AdornedElementPlaceholder
+                                                        Name="txtName"/>
+                                        </Border>
+                                        <Popup
+                                                    IsOpen="True"
+                                                    PlacementTarget="{Binding ElementName=txtName}"
+                                                    Placement="Left"
+                                                    AllowsTransparency="True"
+                                                    HorizontalOffset="5">
+                                        </Popup>
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <TextBlock Text="Port-Number" Margin="5"/>
+                        <TextBox Text="{Binding Port, ValidatesOnExceptions=True}" Margin="5" Grid.Column="0" Grid.Row="1" MaxHeight="20">
+                            <Validation.ErrorTemplate>
+                                <ControlTemplate>
+                                    <StackPanel>
+                                        <Border
+                                                    BorderBrush="Red"
+                                                    BorderThickness="2">
+                                            <AdornedElementPlaceholder
+                                                        Name="txtName"/>
+                                        </Border>
+                                        <Popup
+                                                    IsOpen="True"
+                                                    PlacementTarget="{Binding ElementName=txtName}"
+                                                    Placement="Left"
+                                                    AllowsTransparency="True"
+                                                    HorizontalOffset="5">
+                                        </Popup>
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Validation.ErrorTemplate>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="1">
+                        <TextBlock Text="Add to DashBoard" Margin="5"/>
+                        <Button Content="Add" Command="{Binding AddAgent}" Margin="5" Grid.Column="0" Grid.Row="1" MaxHeight="20"/>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Agents">
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBox MaxHeight="20" Text="{Binding SearchTextForProcesses}" VerticalAlignment="Top" Margin="10">
+
+                        </TextBox>
+                        <ListView ItemsSource="{Binding CurrentProcessesFromCheckedAgent}" Grid.Row="1">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="ShowModules" Width="120" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <RadioButton IsChecked="{Binding IsChecked}" GroupName="processesGroup" MinWidth="80">
+
+                                                </RadioButton>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Name" Width="120" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Name}" MinWidth="80">
+
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="ID" Width="120" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Id}" MinWidth="80">
+
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Memory in mB" Width="120" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Memory}" MinWidth="80">
+
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Priority" Width="120" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Priority}" MinWidth="80">
+
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Startdate" Width="120" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding StartDate}" MinWidth="80">
+
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Description" Width="120" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Title}" MinWidth="80">
+
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+
+
+                    <ListView Grid.Column="1" ItemsSource="{Binding CurrentModulesFromSelectedProcess}" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" MinWidth="80">
+
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Path" Width="120" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path}" MinWidth="80">
+
+                                            </TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <!--<Canvas Grid.Column="2" Height="100" Width="100" HorizontalAlignment="Center" ClipToBounds="True">
+                        <Ellipse Stroke="Black" Width="100" Height="100"></Ellipse>
+                        <Line X1="50" Y1="50"
+                                      X2="50" Y2="0" Stroke="Black" Opacity="1"
+                                      StrokeThickness="1"  />
+                    </Canvas>
+                    <ItemsControl ItemsSource="{Binding PieAnglesForMemory}" HorizontalAlignment="Center" Grid.Column="2">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas  Width="100" Height="100" HorizontalAlignment="Center" ClipToBounds="True"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <ItemContainerTemplate>
+                                <Polyline Points="50,50 50,0" Stroke="Black" Opacity="1"
+                                      StrokeThickness="1">
+                                </Polyline>
+                            </ItemContainerTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>-->
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

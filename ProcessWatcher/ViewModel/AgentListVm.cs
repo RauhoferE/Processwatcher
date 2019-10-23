@@ -308,7 +308,7 @@ namespace ProcessWatcher.ViewModel
                     this.current.Invoke(new Action(() => { this.ClonedCurrentProcessesFromCheckedAgent.Add(item); }));
                 }
             }
-
+            
             this.SearchForProcess();
         }
 

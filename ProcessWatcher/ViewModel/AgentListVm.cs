@@ -113,7 +113,7 @@ namespace ProcessWatcher.ViewModel
             {
                 return new Command(obj =>
                 {
-                    if (this.IpAdress == null || this.port < 0 || !this.isPortInputCorrect)
+                    if (this.port >= 65536 || this.IpAdress == null || this.port < 0 || !this.isPortInputCorrect)
                     {
                         MessageBox.Show($"Please enter a valid ip adress and port number first. ");
                         return;
